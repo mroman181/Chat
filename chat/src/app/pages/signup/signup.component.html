@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container-wrapper container d-flex justify-content-center align-items-center">
+  <div class="form-wrapper text-center">
+    <h1 class="text-center">Sign up</h1>
+    <form [formGroup]="signupForm" (submit)="submit()" novalidate>
+      
+      <div class="form-group">
+        <input type="text" class="form-control" id="firstname-input" placeholder="First Name" formControlName="firstname">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="lastname-input" placeholder="Last Name" formControlName="lastname">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email-input" placeholder="Enter Email" formControlName="email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password-input" placeholder="Password" formControlName="password">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Submit</button>
+    </form>
+  </div>
+ </div>
+ 
