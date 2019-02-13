@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertType } from './../../enums/alert-type.enum';
+import { AlertService } from 'src/app/services/alert.service';
+import { LoadingService } from 'src/app/services/loading.service';
+import { Alert } from './../../classes/alert';
 
 @Component({
   selector: 'app-signup',
@@ -10,10 +14,10 @@ export class SignupComponent implements OnInit {
 
   public signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private alertService: AlertService, private loadingService: LoadingService) {
     this.createForm();
   }
-  
+
   ngOnInit() {
   }
 
@@ -25,11 +29,23 @@ export class SignupComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
- 
+
   public submit(): void {
+
+    this.loadingService.isLoading.next(true);
     // TODO call the auth service
-    const {firstname, lastname, email, password} = this.signupForm.value;
-    console.log(`Firstname: ${firstname}, Lastname: ${lastname}, Email: ${email}, Password: ${password}`);
+    if (this.signupForm.valid) {
+      const { firstname, lastname, email, password } = this.signupForm.value;
+      console.log(`Firstname: ${firstname}, Lastname: ${lastname}, Email: ${email}, Password: ${password}`);
+      this.loadingService.isLoading.next(false);
+
+    } else {
+      const failedLoginAlert = new Alert("Your email or password were invalid, try again", AlertType.Danger);
+      setTimeout(() => {
+        this.loadingService.isLoading.next(false);
+        this.alertService.alerts.next(failedLoginAlert);
+      }, 2000);
+    }
   }
 
 }

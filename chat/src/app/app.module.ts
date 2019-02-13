@@ -1,13 +1,14 @@
+// Core
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+// Components
 import { AppComponent } from './app.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { LoginComponent } from './pages/login/login.component';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChatInputComponent } from './pages/chat/components/chat-input/chat-input.component';
 import { ChatroomListComponent } from './pages/chat/components/chatroom-list/chatroom-list.component';
@@ -17,9 +18,12 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
 
 // Services
 import { AlertService } from './services/alert.service';
+import {LoadingService } from './services/loading.service'
 
 // Modules
 import {AlertModule} from 'ngx-bootstrap';
+import {NgxLoadingModule} from 'ngx-loading';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -40,9 +44,13 @@ import {AlertModule} from 'ngx-bootstrap';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    NgxLoadingModule.forRoot({})
   ],
-  providers: [AlertService],
+  providers: [
+    AlertService,
+    LoadingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
