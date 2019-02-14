@@ -19,6 +19,7 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
 // Services
 import { AlertService } from './services/alert.service';
 import {LoadingService } from './services/loading.service'
+import {AuthService} from './services/auth.service';
 
 // Modules
 import {AlertModule} from 'ngx-bootstrap';
@@ -49,7 +50,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
   ],
   providers: [
     AlertService,
-    LoadingService
+    LoadingService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
