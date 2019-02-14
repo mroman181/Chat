@@ -1,0 +1,26 @@
+@import '../../../../../styles/variables';
+.chat-window{
+    padding-left:30px;
+    padding-top:10px;
+    background-color: $terciary;
+    color: white;
+}
+
+.input-message{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    width: calc(75vw - 45px);
+}
+
+.message-wrapper{   
+    margin-bottom: 35px;
+}
+.chat-typing{
+    overflow-y: scroll;
+    height: calc(100vh - 130px);
+}
+
+.title{
+    height: 36px;
+}

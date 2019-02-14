@@ -1,5 +1,21 @@
+@import '../../../styles/variables';
+.container{
+    background-color: $terciary;
+    width:100%;
+    margin:0;
+    padding:0;
+    max-width: none;
+    color:white;
+}
 .form-wrapper{
     padding: 30px;
     border: solid;
-    border-color:#0062cc;
+    border-color:$primary;
+}
+a{
+    color: white;
+}
+input{
+    background-color: $fourth;
+    border-color: $secondary;
 }

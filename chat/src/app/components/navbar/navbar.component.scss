@@ -1,4 +1,11 @@
-@import '../../../styles/_variables';
+@import '../../../styles/variables';
+
+nav{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: $navbar-height;
+}
 
 span{
     color: #FFFFFF;
