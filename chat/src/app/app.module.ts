@@ -18,13 +18,16 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
 
 // Services
 import { AlertService } from './services/alert.service';
-import {LoadingService } from './services/loading.service'
-import {AuthService} from './services/auth.service';
+import { LoadingService } from './services/loading.service'
+import { AuthService} from './services/auth.service';
 
 // Modules
-import {AlertModule} from 'ngx-bootstrap';
-import {NgxLoadingModule} from 'ngx-loading';
+import { AlertModule} from 'ngx-bootstrap';
+import { NgxLoadingModule} from 'ngx-loading';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+//Guards
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
   providers: [
     AlertService,
     LoadingService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
