@@ -44,7 +44,6 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   public submit(): void {
 
-
     if (this.signupForm.valid) {
       this.loadingService.isLoading.next(true);
       // TODO call the auth service

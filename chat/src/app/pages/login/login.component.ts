@@ -42,30 +42,33 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   public submit(): void {
 
-
     if (this.loginForm.valid) {
       this.loadingService.isLoading.next(true);
       // TODO call the auth service
       const { email, password } = this.loginForm.value;
-
+      
       this.subscriptions.push(
         this.auth.login(email, password).subscribe(success => {
           if (success) {
-            this.router.navigateByUrl(this.returnUrl)
+            this.router.navigateByUrl(this.returnUrl);
+          }else{
+            this.displayFailedLogin();
           }
           this.loadingService.isLoading.next(false);
         })
       );
-
     } else {
-
-      const failedLoginAlert = new Alert("Your email or password were invalid, try again", AlertType.Danger);
       this.loadingService.isLoading.next(false);
-      this.alertService.alerts.next(failedLoginAlert);
+      this.displayFailedLogin();
     }
   }
 
   ngOnDestroy() {
     this.subscriptions.forEach(sub => sub.unsubscribe());
+  }
+
+  private displayFailedLogin(): void{
+    const failedLoginAlert = new Alert("Your email or password were invalid, try again", AlertType.Danger);    
+    this.alertService.alerts.next(failedLoginAlert);
   }
 }

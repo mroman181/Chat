@@ -7,18 +7,14 @@ nav{
     height: $navbar-height;
 }
 
-span{
-    color: #FFFFFF;
+span, .nav-link{
+    color: #FFFFFF !important;
 }
 
 a{
-        color: $light-grey;
         margin-left:3em;
 
         &.active{
             border-bottom: 3px solid $gold;
         }
-}
-.nav-link{
-    color:white;
 }

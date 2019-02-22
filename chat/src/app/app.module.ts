@@ -21,6 +21,7 @@ import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window
 import { AlertService } from './services/alert.service';
 import { LoadingService } from './services/loading.service'
 import { AuthService } from './services/auth.service';
+import { ChatroomService } from './services/chatroom.service';
 
 // Modules
 import { AlertModule } from 'ngx-bootstrap';
@@ -64,7 +65,8 @@ import { AuthGuard } from './guards/auth.guard';
     AlertService,
     LoadingService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    ChatroomService
   ],
   bootstrap: [AppComponent]
 })
