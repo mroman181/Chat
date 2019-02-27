@@ -15,7 +15,7 @@ export class ChatroomWindowComponent implements OnInit {
       sender: {
         firstName: 'Sheldon',
         lastName: 'Cooper',
-        photoUrl: 'http://placekitten.com/g/150/150'
+        photoUrl: 'https://firebasestorage.googleapis.com/v0/b/chat-b1484.appspot.com/o/user.png?alt=media&token=9cd5d6d2-0dd2-421c-bde2-6cfe60ec8c7e'
       }
     },
     {
@@ -24,7 +24,7 @@ export class ChatroomWindowComponent implements OnInit {
       sender: {
         firstName: 'Leonard',
         lastName: 'Hofstadter',
-        photoUrl: 'https://placekitten.com/g/150/150'
+        photoUrl: 'https://firebasestorage.googleapis.com/v0/b/chat-b1484.appspot.com/o/adorable-cat-close-up-1870320%20Cropped.jpg?alt=media&token=7ad027ab-1d17-4c0b-9777-99dae7ad5446'
       }
     },
     {
@@ -33,7 +33,7 @@ export class ChatroomWindowComponent implements OnInit {
       sender: {
         firstName: 'Howard',
         lastName: 'Wolowitz',
-        photoUrl: 'https://placekitten.com/g/150/150'
+        photoUrl: 'https://firebasestorage.googleapis.com/v0/b/chat-b1484.appspot.com/o/user.png?alt=media&token=9cd5d6d2-0dd2-421c-bde2-6cfe60ec8c7e'
       }
     },
     {
@@ -42,7 +42,7 @@ export class ChatroomWindowComponent implements OnInit {
       sender: {
         firstName: 'Amy',
         lastName: ' Farrah Fowler',
-        photoUrl: 'https://placekitten.com/g/150/150'
+        photoUrl: 'https://firebasestorage.googleapis.com/v0/b/chat-b1484.appspot.com/o/user.png?alt=media&token=9cd5d6d2-0dd2-421c-bde2-6cfe60ec8c7e'
       }
     }
   ];

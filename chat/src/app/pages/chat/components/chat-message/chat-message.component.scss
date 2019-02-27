@@ -5,11 +5,16 @@
 }
 
 img{
-    width:150px;
-    height: 150px;
+    height: 100px !important;
 }
 
 .bubble{
-    margin-left:10px;
+    margin-left:15px;
+    margin-right:15px;
+}
 
+@media screen and (max-width: 576px){ 
+    img{
+        height: 50px !important;
+    }
 }
